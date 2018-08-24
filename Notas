@@ -1,6 +1,6 @@
 
 Para empezar con una aplicacion en react hacemos lo siguiente, tenemos que dar permisos de administrador
-por lo tanto ponemos sudo en caso de utilizar macOs en windows seria sin sudo, el -g es pra que se instale de
+por lo tanto ponemos sudo en caso de utilizar macOs en windows seria sin sudo, el -g es para que se instale de
 manera global.
 y ahora si podemos crear una aplicacion de reat js
     sudo npm install -g create-react-app
@@ -10,3 +10,8 @@ Gracias al comando que escribimos anteriormente ahora podemos crear nuestra apli
 despues el nombre que le queremos poner a nuestra apliacion, OJO! los nombres no deven de llevar mayusculas
 porque nos marcaria error
     cerate-react-app my-app
+
+
+la dependencia prop-types nos ayuda para validad las propiedades de nuestros modulos,
+EJE: como por ejemplo que nos aseguremos que ese valor llegue o que tambien si llega ese valor que llegue del tipo
+de dato que tiene que ser para eso nos sirve esa dependencia    
