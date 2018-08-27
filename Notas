@@ -6,7 +6,7 @@ y ahora si podemos crear una aplicacion de reat js
     sudo npm install -g create-react-app
 
 
-Gracias al comando que escribimos anteriormente ahora podemos crear nuestra aplicacion de recat js con cerate-react-app
+Gracias al comando que escribimos anteriormente ahora podemos crear nuestra aplicacion de react js con cerate-react-app
 despues el nombre que le queremos poner a nuestra apliacion, OJO! los nombres no deven de llevar mayusculas
 porque nos marcaria error
     cerate-react-app my-app
@@ -14,4 +14,4 @@ porque nos marcaria error
 
 la dependencia prop-types nos ayuda para validad las propiedades de nuestros modulos,
 EJE: como por ejemplo que nos aseguremos que ese valor llegue o que tambien si llega ese valor que llegue del tipo
-de dato que tiene que ser para eso nos sirve esa dependencia    
+de dato que tiene que ser para eso nos sirve esa dependencia
