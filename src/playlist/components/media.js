@@ -4,6 +4,7 @@ import './media.css'
 import PropTypes from 'prop-types'
 
 export default class Media extends Component{
+      //EJERCICIO 1
       // es un metodo que tienen todas las clases de javascript el cual se ejecuta al momento de ser instanciada
       //el constructor resive todas nuestras propiedades
           // esto esta hecho en ecma6
@@ -12,12 +13,38 @@ export default class Media extends Component{
           //     //enlazamos la funcion detalles con nuestra clase Media, bind es la funcion que contiene todas las funciones la cual nos permite definir el scope ademas de llamar/crear una funcion
           //     this.detalles = this.detalles.bind(this)
           // }
+
         //con esta arrow function hacemos lo que esta arriba ya que las arrow function heredan el contexto de su padre y quien es su padre ? pues Media
         //el cual tiene propiedades
          detalles = e => {
             e.preventDefault()
             alert(this.props.title)
          }
+
+         //EJERCICIO 2 ecma6
+         //para cambiar el valor de una propiedad de un componente lo hacemos de la siguiente manera
+         // constructor(props){
+         //     super(props)
+         //     this.state = {
+         //       author: props.author
+         //
+         //     }
+         // }
+         //con ecma7 no necesitamos el contructor para poder cambiar el estado de nuestras propiedades, solo necesitamos poner state seguido de
+         // la propiedad que queremos cambiar su valor
+         state = {  //con state cambiamos el valor de nuestras propiedades
+           author: 'Rafael Lopez' //tenemos que poner un valor statico antes de cambiar el valor de la propiedad
+         }
+         detalles = e => {
+            e.preventDefault()
+            //con este metodo puedo cambiar el valor de mis propiedades
+            this.setState({
+                author: 'Edgar Antoñoo'
+            })
+         }
+
+         //EJERCICIO 2 ecma7
+
         render(){
             const styles = { //aqui creamos nuesro objeto constante para dar estilos
                 container:{
@@ -47,7 +74,7 @@ export default class Media extends Component{
                     facilitando la planeación y desarrollo de apps complejas.
                     </p>
                     <div className='footer-card'>
-                        <p className='autor'>{this.props.author}</p>
+                        <p className='autor'>{this.state.author}</p>
                         <button onClick={this.detalles} className='btn-info' type="button" name="button">{this.props.btn}</button>
                     </div>
                 </div>
