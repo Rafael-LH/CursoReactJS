@@ -11,6 +11,9 @@
     justify-content: space-between;
     flex-wrap: wrap;
 }
+.card{
+  margin-bottom: 40px;
+}
 .media-Cover{
     width: 320px;
     -webkit-box-shadow: -1px -1px 13px 3px rgba(0,0,0,0.4);
@@ -28,7 +31,8 @@
   background: rgba(0, 0, 0, 0.7);
   border-radius: 2px;
   font-family: arial;
-  font-size: 1.3em;
+  font-size: 1em;
+  padding: 10px;
 }
 .ejemplo{
     width: 100%;
@@ -54,4 +58,14 @@
 }
 .btn-info:hover{
       transform: scale(1.2);
+}
+/*estilos categorias*/
+.categorias{
+    width: 100%
+}
+.categorias span{
+  font-size: .8em;
+}
+.categorias h1{
+    color: blue;
 }
