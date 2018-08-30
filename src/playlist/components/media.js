@@ -16,10 +16,10 @@ export default class Media extends Component{
 
         //con esta arrow function hacemos lo que esta arriba ya que las arrow function heredan el contexto de su padre y quien es su padre ? pues Media
         //el cual tiene propiedades
-         detalles = e => {
-            e.preventDefault()
-            alert(this.props.title)
-         }
+         // detalles = e => {
+         //    e.preventDefault()
+         //    alert('Holi')
+         // }
 
          //EJERCICIO 2 ecma6
          //para cambiar el valor de una propiedad de un componente lo hacemos de la siguiente manera
@@ -33,15 +33,24 @@ export default class Media extends Component{
          //con ecma7 no necesitamos el contructor para poder cambiar el estado de nuestras propiedades, solo necesitamos poner state seguido de
          // la propiedad que queremos cambiar su valor
          state = {  //con state cambiamos el valor de nuestras propiedades
-           author: 'Rafael Lopez' //tenemos que poner un valor statico antes de cambiar el valor de la propiedad
+           author: 'Rafael Lopez', //tenemos que poner un valor statico antes de cambiar el valor de la propiedad
+           bandera: true
          }
          detalles = e => {
             e.preventDefault()
             //con este metodo puedo cambiar el valor de mis propiedades
+            if(this.state.bandera){
+              this.setState({
+                  author: 'Edgar Antoñoo',
+                  bandera: false
+              })
+          }else {
             this.setState({
-                author: 'Edgar Antoñoo'
+                author: 'Rafael Lopez',
+                bandera: true
             })
-         }
+          }
+      }
 
          //EJERCICIO 2 ecma7
 
