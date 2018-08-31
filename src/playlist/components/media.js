@@ -1,9 +1,10 @@
-import React, {Component} from 'react'
+import React, {PureComponent} from 'react'
 import ReactDOM from 'react-dom'
 import './media.css'
 import PropTypes from 'prop-types'
 
-export default class Media extends Component{
+//componente puro
+export default class Media extends PureComponent{
       //EJERCICIO 1
       // es un metodo que tienen todas las clases de javascript el cual se ejecuta al momento de ser instanciada
       //el constructor resive todas nuestras propiedades
@@ -84,7 +85,7 @@ export default class Media extends Component{
                     </p>
                     <div className='footer-card'>
                         <p className='autor'>{this.props.author}</p>
-                        <button onClick={this.detalles} className='btn-info' type="button" name="button">{this.props.btn}</button>
+                        <button onClick={this.detalles} className='btn-info' type="button" name="button">Detalles</button>
                     </div>
                 </div>
               </div>

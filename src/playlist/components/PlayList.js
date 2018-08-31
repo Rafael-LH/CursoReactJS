@@ -1,9 +1,10 @@
 import React, {Component} from 'react'
 import Media from './media'
 
-export default class Playlist extends Component{
-        render(){
-          const playlist = this.props.data.categories[0].playlist
+
+// componente funcional, con los componentes funcionales evitamos el re render
+export default function Playlist(props){
+          const playlist = props.data.categories[0].playlist
             return(
               <div className='Media'>
                   {
@@ -14,6 +15,5 @@ export default class Playlist extends Component{
                     })
                   }
               </div>
-            )
-        }
+        )
     }
