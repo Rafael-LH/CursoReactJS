@@ -81,3 +81,9 @@ componentDidCatch(){
 	// Si ocurre algún error al renderizar el componente este método es invocado
 	// El manejo de errores solo ocurre en compoenetes hijos.
 	}
+
+  Smart Components &amp;amp; Dumb Components
+  Smart Components: Los componentes inteligentes (o componentes del contenedor)
+  Dumb Componentes tontos
+  ¿Por qué separar nuestros componentes en Smart and Dumb? Por qué separa las responsabilidades, del lado de los dumb tenemos como se ve
+  mi componente y por el lado de los smart como funciona m componente

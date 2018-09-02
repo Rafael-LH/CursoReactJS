@@ -1,6 +1,6 @@
-import React, {Component} from 'react'
+import React, {PureComponent} from 'react'
 import Media from './media'
-
+import Play from '../../icons/components/Play'
 
 // componente funcional, con los componentes funcionales evitamos el re render
 export default function Playlist(props){
@@ -14,6 +14,7 @@ export default function Playlist(props){
                       return <Media key={item.id} {...item}/>
                     })
                   }
+                  <Play size={35} color='red' color2='blue' color3='grey' color4='black'/>
               </div>
         )
     }

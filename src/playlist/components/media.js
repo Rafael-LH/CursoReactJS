@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import './media.css'
 import PropTypes from 'prop-types'
 
-//componente puro
+//componente puro, el PureComponent valida si sus propiedades fueron actualizadas, esas es la diferencia entre un componente y un PureComponent
 export default class Media extends PureComponent{
       //EJERCICIO 1
       // es un metodo que tienen todas las clases de javascript el cual se ejecuta al momento de ser instanciada
