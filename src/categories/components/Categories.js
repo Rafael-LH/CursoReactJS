@@ -8,7 +8,13 @@ export default function Categories(props){
               <div className='Categories'>
                 {
                   props.categories.map(items =>{
-                    return <Category key={items.id} {...items} />
+                    return (
+                          <Category
+                            key={items.id}
+                            {...items}
+                            toggleModal={props.toggleModal}
+                            />
+                        )
                   })
                 }
               </div>

@@ -75,7 +75,7 @@ export default class Media extends PureComponent{
               // en la parte del h1 estamos recibiendo una propiedad de nuestro componente media. con this.props podemos acceder a nuetsra propiedades del componente
 
               <div id='detalle' className="card">
-                <div className='media-Cover'>
+                <div className='media-Cover' onClick={this.props.toggleModal}>
                     <img className='media-image' src={this.props.cover} width={260} height={160}/>
                     <h1 className='title' >{this.props.title}</h1>
                     <p className='ejemplo'> ReactJS, una librería Javascript de código abierto, que les ha beneficiado en el desarrollo de algunas de sus

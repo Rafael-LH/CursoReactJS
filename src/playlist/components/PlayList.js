@@ -10,7 +10,10 @@ export default function Playlist(props){
                     props.playlist.map(item => {
                       //como estoy recorriendo una lista de datos, react pide una propiedad (key) que es un valor unico el cual le tenemos que dar
                       //para que de esta manera react lo reconosca y pueda optimizar y agilizar mas el rendimiento de la app
-                      return <Media key={item.id} {...item}/>
+                      return <Media
+                              key={item.id}
+                              {...item}
+                              toggleModal={props.toggleModal}/>
                     })
                   }
               </div>

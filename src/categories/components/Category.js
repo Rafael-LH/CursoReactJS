@@ -8,7 +8,9 @@ export default function Category(props){
           <div className='Category'>
             <p className='CategoryDescription'>{props.description}</p>
             <h2 className='CategoryTitle'>{props.title}</h2>
-            <PlayList playlist={props.playlist}/>
+            <PlayList
+                  playlist={props.playlist}
+                  toggleModal={props.toggleModal}/>
           </div>
       )
 }
