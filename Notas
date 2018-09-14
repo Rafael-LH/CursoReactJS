@@ -95,3 +95,10 @@ componentDidCatch(){
 
 
   UI(User Interface Elements) Elementos de interfaz de usuario
+
+
+
+  En un componente de UI componente tonto Dumb Component no podemos utilizar this ni className
+  ni crear funciones ni tendra metodo render lo que hace el componente de UI es solo resivir esos datos de una smart component
+  para que el componente de UI solo lo renderie, el Smart component servira como le jefe que dara
+  indicaciones a su UI component y le dira tu quiero que renderies estos datos y ya solo eso hara nuestro Dumb component

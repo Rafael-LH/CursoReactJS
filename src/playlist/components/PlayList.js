@@ -1,8 +1,8 @@
 import React, {PureComponent} from 'react'
 import Media from './media'
 
-//este seria como mi vista en php del mvc
-// componente funcional, con los componentes funcionales evitamos el re render
+//este seria como mi vista en php del mvc. componente inteligente, smart component, componente de UI(user interface)
+//componente funcional, con los componentes funcionales evitamos el re render
 export default function Playlist(props){
             return(
               <div className='Media'>
