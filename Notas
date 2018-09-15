@@ -102,3 +102,6 @@ componentDidCatch(){
   ni crear funciones ni tendra metodo render lo que hace el componente de UI es solo resivir esos datos de una smart component
   para que el componente de UI solo lo renderie, el Smart component servira como le jefe que dara
   indicaciones a su UI component y le dira tu quiero que renderies estos datos y ya solo eso hara nuestro Dumb component
+
+
+  Los componetes funcionales no deven de manejar sus propios eventos, deven de venir por propiedades
