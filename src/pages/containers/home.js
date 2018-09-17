@@ -4,7 +4,7 @@ import Categories from '../../categories/components/Categories'
 import Related from '../components/Related'
 import ModalContainer from '../../widgets/containers/ModalContainer'
 import Modal from '../../widgets/components/Modal'
-import HandleError from '../../error/container/handleError'
+import HandleError from '../../error/containers/handleError'
 
 //este seria como mi controlador en php del mvc
 //smart component, componente inteligente
@@ -13,7 +13,7 @@ export default class Home extends Component{
             state = {
                 close: false,
             }
-            handleToggleModal = (eve) =>{
+            handleToggleModal = eve =>{
               this.setState({
                 close: this.state.close ? false : true,
               })

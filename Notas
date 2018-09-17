@@ -105,3 +105,6 @@ componentDidCatch(){
 
 
   Los componetes funcionales no deven de manejar sus propios eventos, deven de venir por propiedades
+
+  las ref={props.funcion} se utilizan como referencia en react, es como un id pero en react en vez de id se utiliza ref para hacer referencia
+  a un elemento html

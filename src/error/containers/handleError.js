@@ -23,7 +23,7 @@ export default class HandleError extends Component{
             if (this.state.handleError) {
                 return (
                 <div className='handleError'>
-                  <RegularError error='ha ocurrido algun error'/>
+                  <RegularError error='ha ocurrido algun error' />
                 </div>
               )
              }
