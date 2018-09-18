@@ -21,8 +21,8 @@ const Search = props =>( //o tambien de esta manera con un arrow function, el re
                  className='search-input'
                  type='text'
                  onChange={props.handleChange}
-                 value={props.value}/>
-
+                 value={props.value}
+                 />
       </form>
 )
 

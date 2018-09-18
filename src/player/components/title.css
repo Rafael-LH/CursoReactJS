@@ -1,0 +1,13 @@
+.titlePlayer{
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(0,0,0,.5);
+  color: #fff;
+  padding: 10px 20px;
+}
+.titlePlayer h2{
+  margin: 0;
+  font-size: 16px;
+  font-weight: normal;
+}

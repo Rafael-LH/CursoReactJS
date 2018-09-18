@@ -5,9 +5,10 @@ import Related from '../components/Related'
 import ModalContainer from '../../widgets/containers/ModalContainer'
 import Modal from '../../widgets/components/Modal'
 import HandleError from '../../error/containers/handleError'
+import PlayerContainer from '../../player/containers/PlayerContainer'
 
 //este seria como mi controlador en php del mvc
-//smart component, componente inteligente
+//smart component, componente inteligente, controlador del mvc
 export default class Home extends Component{
 
             state = {
@@ -24,6 +25,7 @@ export default class Home extends Component{
                   <HandleError>
                       <HomeLayout>
                           <Related />
+                          <PlayerContainer />
                           <Categories
                             categories={this.props.data.categories}
                             toggleModal={this.handleToggleModal}

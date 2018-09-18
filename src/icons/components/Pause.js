@@ -1,15 +1,10 @@
 import React from 'react'
+import Icon from './Icon'
 
 export default function Pausa(props){
-
-        const {
-              color2,
-              size
-        } = props
-
       return(
-              <svg viewBox='0 0 32 32' fill={color2} width={size} height={size}>
-                  {props.children}
-              </svg>
+         <Icon {...props}>
+            <path d="M4 4h10v24h-10zM18 4h10v24h-10z"/>
+          </Icon>
         )
 }
