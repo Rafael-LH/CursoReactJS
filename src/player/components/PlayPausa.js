@@ -5,12 +5,21 @@ import './playPause.css'
 
   const PlayPausa = props =>(
           <div className='playPause'>
-              <button>
-                  <Play color='white' size={25}/>
-              </button>
-              <button>
-                <Pause color='white' size={25} />
-              </button>
-          </div>
+            {
+              props.pause //si esto es true se mostrara el boton de play
+                ?
+                  <button onClick={props.handleToggleClick}>
+                    <Play
+                    color='white'
+                    size={25}/>
+                  </button>
+                : //de lo contrario se mostrara el boton de pausa
+                    <button onClick={props.handleToggleClick}>
+                      <Pause
+                          color='white'
+                          size={25}/>
+                    </button>
+            }
+         </div>
   )
   export default PlayPausa

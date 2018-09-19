@@ -20,12 +20,13 @@ export default class Home extends Component{
               })
 
             }
+            // autoplay esta por defaul en true y de esta manera es como mando el autoplay en true a PlayerContainer
             render(){
                 return(
                   <HandleError>
                       <HomeLayout>
                           <Related />
-                          <PlayerContainer />
+                          <PlayerContainer autoplay/>
                           <Categories
                             categories={this.props.data.categories}
                             toggleModal={this.handleToggleModal}

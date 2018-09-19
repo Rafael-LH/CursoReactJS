@@ -74,19 +74,14 @@ export default class Media extends PureComponent{
               //Nota: className, src, width esto no se le llaman atributos en React si no propiedades
               // en la parte del h1 estamos recibiendo una propiedad de nuestro componente media. con this.props podemos acceder a nuetsra propiedades del componente
 
-              <div id='detalle' className="card">
-                <div className='media-Cover' onClick={this.props.toggleModal}>
-                    <img className='media-image' src={this.props.cover} width={260} height={160}/>
-                    <h1 className='title' >{this.props.title}</h1>
-                    <p className='ejemplo'> ReactJS, una librería Javascript de código abierto, que les ha beneficiado en el desarrollo de algunas de sus
-                    plataformas, por ejemplo Instagram. Esta librería, a pesar de tener detalles algo polémicos,
-                    ofrece grandes beneficios en performance, modularidad y promueve un flujo muy claro de datos y eventos,
-                    facilitando la planeación y desarrollo de apps complejas.
-                    </p>
-                    <div className='footer-card'>
-                        <p className='autor'>{this.props.author}</p>
-                        <button onClick={this.detalles} className='btn-info' type="button" name="button">Detalles</button>
-                    </div>
+              <div id='detalle' className="media">
+                <div className='media-cover' onClick={this.props.toggleModal}>
+                    <img className='media-image'
+                         src={this.props.cover}
+                         width={260}
+                         height={160}/>
+                    <h3 className='media-title' >{this.props.title}</h3>
+                    <p className='media-author'>{this.props.author}</p>
                 </div>
               </div>
            )

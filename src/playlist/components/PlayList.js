@@ -1,11 +1,12 @@
 import React, {PureComponent} from 'react'
 import Media from './media'
+import './playlist.css'
 
 //este seria como mi vista en php del mvc. componente inteligente, smart component, componente de UI(user interface)
 //componente funcional, con los componentes funcionales evitamos el re render
 export default function Playlist(props){
             return(
-              <div className='Media'>
+              <div className='playlist'>
                   {
                     props.playlist.map(item => {
                       //como estoy recorriendo una lista de datos, react pide una propiedad (key) que es un valor unico el cual le tenemos que dar
