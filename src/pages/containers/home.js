@@ -26,7 +26,7 @@ export default class Home extends Component{
                   <HandleError>
                       <HomeLayout>
                           <Related />
-                          <PlayerContainer autoplay/>
+                          <PlayerContainer autoplay={false}/>
                           <Categories
                             categories={this.props.data.categories}
                             toggleModal={this.handleToggleModal}
