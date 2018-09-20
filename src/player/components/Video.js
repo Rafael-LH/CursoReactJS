@@ -22,7 +22,8 @@ export default class Video extends Component{
     }
     render(){
         const {
-          handleLoadedMetadata
+          handleLoadedMetadata,
+          handleTimeUpdate,
         } = this.props
         return(
           <div className='video'>
@@ -30,7 +31,8 @@ export default class Video extends Component{
                 autoPlay={this.props.autoplay}
                 src={this.props.src}
                 ref={this.setRef}
-                onLoadedMetadata={handleLoadedMetadata}/>
+                onLoadedMetadata={handleLoadedMetadata}
+                onTimeUpdate={handleTimeUpdate}/>
             </div>
         )
      }

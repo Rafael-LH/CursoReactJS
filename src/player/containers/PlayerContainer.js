@@ -5,12 +5,13 @@ import Title from '../components/Title'
 import PlayPausa from '../components/PlayPausa'
 import Timer from '../components/Timer'
 import VideoPlayerControls from '../components/VideoPlayerControls'
-
+import FormattedTime from '../components/Utilidades'
 
   export default class PlayerContainer extends Component{
               state = {
                   pause: true,
                   duration: 0,
+                  currentTime: 0,
               }
               togglePlay = e =>{
                   this.setState({
@@ -30,6 +31,12 @@ import VideoPlayerControls from '../components/VideoPlayerControls'
                       duration: this.video.duration
                   })
               }
+              handleTimeUpdate = event =>{
+                  // console.log(this.video.currentTime); //currentTime es una propiedad nativa del elemento html video. la cual nos traera lo que dura nuestro video este log se imprimira segundo por segundo
+                  this.setState({
+                      currentTime: this.video.currentTime
+                  })
+              }
               render(){
                   return(
                       <Player>
@@ -39,13 +46,17 @@ import VideoPlayerControls from '../components/VideoPlayerControls'
                                 pause={this.state.pause}
                                 handleToggleClick={this.togglePlay}
                                 />
-                          <Timer duration={this.state.duration}/>
+                          <Timer
+                              currentTime={FormattedTime(this.state.currentTime)}
+                              duration={FormattedTime(this.state.duration)} />
                         </VideoPlayerControls>
                           <Video
                               pausa={this.state.pause}
                               autoplay={this.props.autoplay}
                               handleLoadedMetadata={this.handleLoadedMetadata}
+                              handleTimeUpdate={this.handleTimeUpdate}
                               src='http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4'/>
+
                        </Player>
                   )
               }
