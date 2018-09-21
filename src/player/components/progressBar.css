@@ -1,0 +1,8 @@
+.progressBar {
+    width: 100%;
+    display: flex;
+    flex: 1;
+}
+.progressBar input{
+    width: 100%;
+}
