@@ -1,5 +1,5 @@
 import React from 'react'
-import './timer.css'
+import './css/timer.css'
 
 // UI Component, Component de UI, Dumb Component, Componente Tonto
   const Timer = props => (

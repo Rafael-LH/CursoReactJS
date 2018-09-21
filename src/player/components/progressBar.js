@@ -1,5 +1,5 @@
 import React from 'react'
-import './progressBar.css'
+import './css/progressBar.css'
 
 // el tipo range es una propiead (que en HTML es atributo) la cual nos permite mover la barra de reproduccion
     const ProgressBar = props =>(

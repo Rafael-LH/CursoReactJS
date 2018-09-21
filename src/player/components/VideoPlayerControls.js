@@ -1,5 +1,5 @@
 import React from 'react'
-import './videoPlayerControls.css'
+import './css/videoPlayerControls.css'
 
     const VideoPlayerControls = props =>(
           <div className='videoPlayerControls'>

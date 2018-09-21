@@ -1,5 +1,5 @@
 import React from 'react'
-import './player.css'
+import './css/player.css'
 
 const Player = props => (
               <div className='playerLayout'>

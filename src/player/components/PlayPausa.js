@@ -1,7 +1,7 @@
 import React from 'react'
 import Play from '../../icons/components/Play'
 import Pause from '../../icons/components/Pause'
-import './playPause.css'
+import './css/playPause.css'
 
   const PlayPausa = props =>(
           <div className='playPause'>

@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import './video.css'
+import './css/video.css'
 export default class Video extends Component{
 
 
@@ -10,6 +10,9 @@ export default class Video extends Component{
               this.video.pause()
         }
       }
+
+      // onSeeking es un evento que indica me estoy moviendo. tanto como onSeeked y onSeeked son eventos nativos de HTML 5
+      // onSeeked es ya me movi ya hice el movimiento
 
     //ciclo de vida de un componente, con componentWillReceiveProps lo utilizamos cuando me llegan nuevas propiedades, lo que puedo hacer validar o modificar esas propiedades
     componentWillReceiveProps(nextProps){
@@ -24,6 +27,8 @@ export default class Video extends Component{
         const {
           handleLoadedMetadata,
           handleTimeUpdate,
+          handleSeeking,
+          handleSeeked,
         } = this.props
         return(
           <div className='video'>
@@ -32,7 +37,9 @@ export default class Video extends Component{
                 src={this.props.src}
                 ref={this.setRef}
                 onLoadedMetadata={handleLoadedMetadata}
-                onTimeUpdate={handleTimeUpdate}/>
+                onTimeUpdate={handleTimeUpdate}
+                onSeeking={handleSeeking}
+                onSeeked={handleSeeked}/>
             </div>
         )
      }
