@@ -1,9 +1,7 @@
 import React from 'react'
-import Icon from './Icon'
+import './mute.css'
 
     const Mute = props =>(
-          <Icon {...props}>
-            <path d="M4 4h10v24h-10zM18 4h10v24h-10z"/>
-          </Icon>
+            <i className="fas fa-volume-off volume"></i>
     )
     export default Mute

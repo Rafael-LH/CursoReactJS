@@ -10,12 +10,9 @@ import Mute from '../../icons/components/Mute'
           <div className='volume'>
                 <button onClick={props.handleVolumenClick}>
                   {
-                    !props.mute
+                    props.mute
                     ?
-                      <Mute
-                        color="white"
-                        size={25}
-                      />
+                      <Mute />
                     :
                       <VolumeIcon
                         color="white"

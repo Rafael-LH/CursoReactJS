@@ -17,7 +17,7 @@ import Volume from '../components/Volume'
                   currentTime: 0,
                   loading: false,
                   mute: false,
-                  vol: 0,
+                  volume: 0,
               }
               togglePlay = e =>{
                   this.setState({
@@ -57,16 +57,16 @@ import Volume from '../components/Volume'
                     })
               }
               handleVolumeChange = event =>{
-                    this.video.volume =  event.target.value //volume es un atributo nativo de HTML 5 de la etiqueta/elemento video
+                    this.video.volume =  event.target.value //volume es un atributo nativo de HTML 5 de la etiqueta/elemento video, el cual me trae el valor del volumen, en que punto de la barra esta
               }
               handleVolumenClick = event =>{
                       this.setState({
-                          mute: !this.state.mute //de arranque estyo validando si se llama a esta funcion cambiara de false a true
-                          // vol: event.target.value
+                          mute: !this.state.mute, //de arranque estyo validando si se llama a esta funcion cambiara de false a true
+                          volume:  this.video.volume,
                       })
 
-                        this.video.volume = (!this.state.mute) ? 0 : document.getElementById('input-range').value
-                        console.log(this.video.volume);
+                        this.video.volume = (!this.state.mute) ? 0 : this.state.volume
+                        // console.log(this.state.volume);
               }
               render(){
                   return(
