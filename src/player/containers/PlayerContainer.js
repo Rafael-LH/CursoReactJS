@@ -61,11 +61,12 @@ import Volume from '../components/Volume'
               }
               handleVolumenClick = event =>{
                       this.setState({
-                          mute: !this.state.mute, //de arranque estyo validando si se llama a esta funcion cambiara de false a true
-                          vol: event.target.value
+                          mute: !this.state.mute //de arranque estyo validando si se llama a esta funcion cambiara de false a true
+                          // vol: event.target.value
                       })
 
-                    this.video.volume = (this.state.mute) ? 0 : this.state.vol
+                        this.video.volume = (!this.state.mute) ? 0 : document.getElementById('input-range').value
+                        console.log(this.video.volume);
               }
               render(){
                   return(
@@ -88,6 +89,7 @@ import Volume from '../components/Volume'
                           <Volume
                             handleVolumeChange={this.handleVolumeChange}
                             handleVolumenClick={this.handleVolumenClick}
+                            mute={this.state.mute}
                           />
                       </VideoPlayerControls>
                          <Spinner

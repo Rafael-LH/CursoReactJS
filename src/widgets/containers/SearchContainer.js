@@ -27,7 +27,6 @@ export default class SearchContainer extends Component{
                 // componente de UI
                 <Search
                     setRef={this.setInputRef}
-                    setRef2={this.setRef2}
                     handleSubmit={this.handleSubmit}
                     handleChange={this.handleInputChange}
                     value={this.state.value}/>
