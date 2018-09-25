@@ -9,6 +9,7 @@ import FormattedTime from '../components/Utilidades'
 import ProgressBar from '../components/ProgressBar'
 import Spinner from '../components/Spinner'
 import Volume from '../components/Volume'
+import FullScreen from '../components/FullScreen'
 
   export default class PlayerContainer extends Component{
               state = {
@@ -68,11 +69,25 @@ import Volume from '../components/Volume'
                         this.video.volume = (!this.state.mute) ? 0 : this.state.volume
                         // console.log(this.state.volume);
               }
+              handleClickFullScreen = event =>{
+                  if(!document.webkitIsFullScreen){ //fullScreen es una API nativa del navegador el cual funciona distinto en cada navegadores como por ejemplo webkitIsFullScreen es para chrome
+                      //mando el fullScreen
+                      this.player.webkitRequestFullscreen() //webkitRequestFullScreen tambien en un API nativa del navegador
+                    }else {
+                      //salgo del fullScreen
+                      document.webkitExitFullscreen()
+                  }
+              }
+              setRef = event =>{
+                  this.player = event //resivira el elemento HTML
+              }
               render(){
                   return(
                       <Player>
                       <Title title='Holi'/>
-                      <VideoPlayerControls>
+                      <VideoPlayerControls
+                        setRef={this.setRef}
+                      >
                           <PlayPausa
                                 pause={this.state.pause}
                                 handleToggleClick={this.togglePlay}
@@ -90,6 +105,9 @@ import Volume from '../components/Volume'
                             handleVolumeChange={this.handleVolumeChange}
                             handleVolumenClick={this.handleVolumenClick}
                             mute={this.state.mute}
+                          />
+                        <FullScreen
+                            handleClick={this.handleClickFullScreen}
                           />
                       </VideoPlayerControls>
                          <Spinner
