@@ -14,9 +14,10 @@ export default class Home extends Component{
             state = {
                 close: false, //le damos el estado inicial
             }
-            handleToggleModal = eve =>{
+            handleToggleModal = media =>{
               this.setState({
                 close: this.state.close ? false : true,
+                media
               })
 
             }
@@ -35,7 +36,11 @@ export default class Home extends Component{
                             <ModalContainer>
                                 <Modal
                                   toggleModal={this.handleToggleModal}>
-                                  <PlayerContainer autoplay={false}/>
+                                  <PlayerContainer
+                                      autoplay={true}
+                                      src={this.state.media.src}
+                                      title={this.state.media.title}
+                                    />
                                 </Modal>
                             </ModalContainer>
                           }

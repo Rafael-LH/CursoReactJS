@@ -1,6 +1,6 @@
 import React from 'react'
 import {render} from 'react-dom'
-import Home from '../pages/containers/home'
+import Home from '../pages/containers/Home'
 import data from '../api.json'
 
 //este seria como mi controlador en php del mvc

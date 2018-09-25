@@ -84,44 +84,43 @@ import FullScreen from '../components/FullScreen'
               render(){
                   return(
                       <Player>
-                      <Title title='Holi'/>
-                      <VideoPlayerControls
-                        setRef={this.setRef}
-                      >
-                          <PlayPausa
-                                pause={this.state.pause}
-                                handleToggleClick={this.togglePlay}
-                          />
-                          <Timer
-                              currentTime={FormattedTime(this.state.currentTime)}
-                              duration={FormattedTime(this.state.duration)}
-                          />
-                          <ProgressBar
-                              duration={this.state.duration}
-                              value={this.state.currentTime}
-                              handleProgressChange={this.handleProgressChange}
-                          />
-                          <Volume
-                            handleVolumeChange={this.handleVolumeChange}
-                            handleVolumenClick={this.handleVolumenClick}
-                            mute={this.state.mute}
-                          />
-                        <FullScreen
-                            handleClick={this.handleClickFullScreen}
-                          />
-                      </VideoPlayerControls>
-                         <Spinner
-                              active={this.state.loading}
-                          />
-                          <Video
-                              pausa={this.state.pause}
-                              autoplay={this.props.autoplay}
-                              handleLoadedMetadata={this.handleLoadedMetadata}
-                              handleTimeUpdate={this.handleTimeUpdate}
-                              handleSeeking={this.handleSeeking}
-                              handleSeeked={this.handleSeeked}
-                              src='http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4'/>
-
+                          <Title title={this.props.title}/>
+                          <VideoPlayerControls
+                            setRef={this.setRef}
+                          >
+                              <PlayPausa
+                                    pause={this.state.pause}
+                                    handleToggleClick={this.togglePlay}
+                              />
+                              <Timer
+                                  currentTime={FormattedTime(this.state.currentTime)}
+                                  duration={FormattedTime(this.state.duration)}
+                              />
+                              <ProgressBar
+                                  duration={this.state.duration}
+                                  value={this.state.currentTime}
+                                  handleProgressChange={this.handleProgressChange}
+                              />
+                              <Volume
+                                handleVolumeChange={this.handleVolumeChange}
+                                handleVolumenClick={this.handleVolumenClick}
+                                mute={this.state.mute}
+                              />
+                            <FullScreen
+                                handleClick={this.handleClickFullScreen}
+                              />
+                          </VideoPlayerControls>
+                             <Spinner
+                                  active={this.state.loading}
+                              />
+                              <Video
+                                  pausa={this.state.pause}
+                                  autoplay={this.props.autoplay}
+                                  handleLoadedMetadata={this.handleLoadedMetadata}
+                                  handleTimeUpdate={this.handleTimeUpdate}
+                                  handleSeeking={this.handleSeeking}
+                                  handleSeeked={this.handleSeeked}
+                                  src={this.props.src}/>
                        </Player>
                   )
               }
