@@ -54,7 +54,9 @@ export default class Media extends PureComponent{
       }
 
          //EJERCICIO 2 ecma7
-
+         toggleModal = event => {
+              this.props.toggleModal(this.props) //aqui le paso todas mis propedades a mi toggleModl que biene desde Home en pages/
+         }
         render(){
             const styles = { //aqui creamos nuesro objeto constante para dar estilos
                 container:{
@@ -75,7 +77,7 @@ export default class Media extends PureComponent{
               // en la parte del h1 estamos recibiendo una propiedad de nuestro componente media. con this.props podemos acceder a nuetsra propiedades del componente
 
               <div id='detalle' className="media">
-                <div className='media-cover' onClick={this.props.toggleModal}>
+                <div className='media-cover' onClick={this.toggleModal}>
                     <img className='media-image'
                          src={this.props.cover}
                          width={260}

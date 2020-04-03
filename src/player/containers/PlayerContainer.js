@@ -9,6 +9,7 @@ import FormattedTime from '../components/Utilidades'
 import ProgressBar from '../components/ProgressBar'
 import Spinner from '../components/Spinner'
 import Volume from '../components/Volume'
+import FullScreen from '../components/FullScreen'
 
   export default class PlayerContainer extends Component{
               state = {
@@ -69,42 +70,58 @@ import Volume from '../components/Volume'
                         this.video.volume = (!this.state.mute) ? 0 : this.state.volume
                         console.log(this.state.video);
               }
+              handleClickFullScreen = event =>{
+                  if(!document.webkitIsFullScreen){ //fullScreen es una API nativa del navegador el cual funciona distinto en cada navegadores como por ejemplo webkitIsFullScreen es para chrome
+                      //mando el fullScreen
+                      this.player.webkitRequestFullscreen() //webkitRequestFullScreen tambien en un API nativa del navegador
+                    }else {
+                      //salgo del fullScreen
+                      document.webkitExitFullscreen()
+                  }
+              }
+              setRef = event =>{
+                  this.player = event //resivira el elemento HTML
+              }
               render(){
                   return(
                       <Player>
-                      <Title title='Holi'/>
-                      <VideoPlayerControls>
-                          <PlayPausa
-                                pause={this.state.pause}
-                                handleToggleClick={this.togglePlay}
-                          />
-                          <Timer
-                              currentTime={FormattedTime(this.state.currentTime)}
-                              duration={FormattedTime(this.state.duration)}
-                          />
-                          <ProgressBar
-                              duration={this.state.duration}
-                              value={this.state.currentTime}
-                              handleProgressChange={this.handleProgressChange}
-                          />
-                          <Volume
-                            handleVolumeChange={this.handleVolumeChange}
-                            handleVolumenClick={this.handleVolumenClick}
-                            mute={this.state.mute}
-                          />
-                      </VideoPlayerControls>
-                         <Spinner
-                              active={this.state.loading}
-                          />
-                          <Video
-                              pausa={this.state.pause}
-                              autoplay={this.props.autoplay}
-                              handleLoadedMetadata={this.handleLoadedMetadata}
-                              handleTimeUpdate={this.handleTimeUpdate}
-                              handleSeeking={this.handleSeeking}
-                              handleSeeked={this.handleSeeked}
-                              src='http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4'/>
-
+                          <Title title={this.props.title}/>
+                          <VideoPlayerControls
+                            setRef={this.setRef}
+                          >
+                              <PlayPausa
+                                    pause={this.state.pause}
+                                    handleToggleClick={this.togglePlay}
+                              />
+                              <Timer
+                                  currentTime={FormattedTime(this.state.currentTime)}
+                                  duration={FormattedTime(this.state.duration)}
+                              />
+                              <ProgressBar
+                                  duration={this.state.duration}
+                                  value={this.state.currentTime}
+                                  handleProgressChange={this.handleProgressChange}
+                              />
+                              <Volume
+                                handleVolumeChange={this.handleVolumeChange}
+                                handleVolumenClick={this.handleVolumenClick}
+                                mute={this.state.mute}
+                              />
+                            <FullScreen
+                                handleClick={this.handleClickFullScreen}
+                              />
+                          </VideoPlayerControls>
+                             <Spinner
+                                  active={this.state.loading}
+                              />
+                              <Video
+                                  pausa={this.state.pause}
+                                  autoplay={this.props.autoplay}
+                                  handleLoadedMetadata={this.handleLoadedMetadata}
+                                  handleTimeUpdate={this.handleTimeUpdate}
+                                  handleSeeking={this.handleSeeking}
+                                  handleSeeked={this.handleSeeked}
+                                  src={this.props.src}/>
                        </Player>
                   )
               }

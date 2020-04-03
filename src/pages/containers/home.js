@@ -12,11 +12,12 @@ import PlayerContainer from '../../player/containers/PlayerContainer'
 export default class Home extends Component{
 
             state = {
-                close: false,
+                close: false, //le damos el estado inicial
             }
-            handleToggleModal = eve =>{
+            handleToggleModal = media =>{
               this.setState({
                 close: this.state.close ? false : true,
+                media
               })
 
             }
@@ -26,7 +27,6 @@ export default class Home extends Component{
                   <HandleError>
                       <HomeLayout>
                           <Related />
-                          <PlayerContainer autoplay={false}/>
                           <Categories
                             categories={this.props.data.categories}
                             toggleModal={this.handleToggleModal}
@@ -36,7 +36,11 @@ export default class Home extends Component{
                             <ModalContainer>
                                 <Modal
                                   toggleModal={this.handleToggleModal}>
-                                  <h1>Esto es un portal</h1>
+                                  <PlayerContainer
+                                      autoplay={true}
+                                      src={this.state.media.src}
+                                      title={this.state.media.title}
+                                    />
                                 </Modal>
                             </ModalContainer>
                           }
