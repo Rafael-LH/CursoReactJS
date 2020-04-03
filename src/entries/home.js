@@ -6,6 +6,6 @@ import data from '../api.json'
 //este seria como mi controlador en php del mvc
 // ReactDOM.render(que voy a renderizar, y donde lo voy a renderizar)
 render(
-        <Home data={data}/>,
+        <Home data={data}/>,  
         document.getElementById('home-container')
       )

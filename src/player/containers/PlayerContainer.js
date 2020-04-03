@@ -19,6 +19,7 @@ import Volume from '../components/Volume'
                   mute: false,
                   volume: 0,
               }
+              // video es un nombre que le doy el cual me traera el elemento HTML video
               togglePlay = e =>{
                   this.setState({
                       pause: !this.state.pause //cambia el valor booleano de true a false y viceversa cada vez que llamemos a esta funcion
@@ -66,7 +67,7 @@ import Volume from '../components/Volume'
                       })
 
                         this.video.volume = (!this.state.mute) ? 0 : this.state.volume
-                        // console.log(this.state.volume);
+                        console.log(this.state.video);
               }
               render(){
                   return(
